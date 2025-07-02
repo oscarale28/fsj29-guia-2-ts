@@ -58,7 +58,7 @@ exercises.forEach((exercise) => {
     sandbox.innerHTML = "Cargando ejercicio...";
     try {
       // Carga del módulo
-      const module = await exercise.path();
+      const module = await exercise.path!();
       generalRender(exercise.title, (module as any).default ? (module as any).default() : null);
     } catch (err) {
       console.error("Error al cargar el ejercicio:", err);
